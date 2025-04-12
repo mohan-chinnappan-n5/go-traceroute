@@ -1,0 +1,37 @@
+flowchart TD
+    A[Start Traceroute] --> B[Set TTL = 1]
+    B --> C[Send ICMP Echo Request<br>with TTL]
+    C --> D[Receive ICMP Reply]
+    D -->|TTL = 0| E[ICMP Time Exceeded<br>from Router]
+    E --> F[Record Router IP]
+    D -->|Reached Destination| G[ICMP Echo Reply<br>from Destination]
+    G --> H[Stop Tracing]
+    F --> I["Measure RTT<br>(3 Packets per Hop)"]
+    I --> J[Resolve Hostname<br>via Reverse DNS]
+    J -->|Success| K[Record Hostname]
+    J -->|Failure| L[Record 'N/A']
+    K --> M[TTL more than Max Hops 30?]
+    L --> M
+    M -->|Yes| N[Increment TTL]
+    N --> C
+    M -->|No| H
+    H --> O[Generate HTML Output]
+    O --> P[End]
+
+    %% Styling with colors
+    style A fill:#28a745,stroke:#1e7e34,color:#fff
+    style P fill:#28a745,stroke:#1e7e34,color:#fff
+    style C fill:#1e90ff,stroke:#1c2526,color:#fff
+    style D fill:#1e90ff,stroke:#1c2526,color:#fff
+    style E fill:#1e90ff,stroke:#1c2526,color:#fff
+    style G fill:#1e90ff,stroke:#1c2526,color:#fff
+    style B fill:#ff9500,stroke:#cc7a00,color:#fff
+    style F fill:#ff9500,stroke:#cc7a00,color:#fff
+    style I fill:#ff9500,stroke:#cc7a00,color:#fff
+    style J fill:#ff9500,stroke:#cc7a00,color:#fff
+    style K fill:#ff9500,stroke:#cc7a00,color:#fff
+    style L fill:#ff9500,stroke:#cc7a00,color:#fff
+    style N fill:#ff9500,stroke:#cc7a00,color:#fff
+    style M fill:#ffeb3b,stroke:#f7c948,color:#000
+    style H fill:#ff4d4d,stroke:#cc0000,color:#fff
+    style O fill:#9933ff,stroke:#6600cc,color:#fff

@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traceroute Results - google.com</title>
+  <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n5.github.io/dfv/img/mc_favIcon.ico">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans p-4">
+  <div class="container mx-auto max-w-4xl">
+    
+    <header class="bg-blue-500 text-white p-4 rounded-md shadow mb-4">
+      <h1 class="text-2xl font-semibold">Traceroute Results</h1>
+      <p class="text-sm">Tracing route to google.com [142.251.40.174]</p>
+    </header>
+
+    
+    <section class="mb-8">
+      <p class="text-sm text-gray-600 mb-2">Round Trip timings are in milliseconds (ms). If the value is '*', the host is not reachable.</p>
+      <div class="overflow-x-auto">
+        <table id="tracerouteTable" class="display w-full">
+          <thead>
+            <tr>
+              <th>Hop</th>
+              <th>Addresses</th>
+              <th>Hostnames</th>
+              <th>RTT 1</th>
+              <th>RTT 2</th>
+              <th>RTT 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>1</td>
+              <td>192.168.1.1</td>
+              <td>N/A</td>
+              <td>10.44</td>
+              <td>4.16</td>
+              <td>4.27</td>
+            </tr>
+            
+            <tr>
+              <td>2</td>
+              <td></td>
+              <td>N/A</td>
+              <td>0.00</td>
+              <td>0.00</td>
+              <td>0.00</td>
+            </tr>
+            
+            <tr>
+              <td>3</td>
+              <td>67.59.241.249</td>
+              <td>433be0f9.cst.lightpath.net</td>
+              <td>20.94</td>
+              <td>14.87</td>
+              <td>12.72</td>
+            </tr>
+            
+            <tr>
+              <td>4</td>
+              <td>67.59.254.246</td>
+              <td>N/A</td>
+              <td>16.79</td>
+              <td>12.77</td>
+              <td>15.03</td>
+            </tr>
+            
+            <tr>
+              <td>5</td>
+              <td>65.19.100.6</td>
+              <td>N/A</td>
+              <td>15.33</td>
+              <td>14.92</td>
+              <td>15.18</td>
+            </tr>
+            
+            <tr>
+              <td>6</td>
+              <td>64.15.1.151</td>
+              <td>N/A</td>
+              <td>14.48</td>
+              <td>15.17</td>
+              <td>18.22</td>
+            </tr>
+            
+            <tr>
+              <td>7</td>
+              <td></td>
+              <td>N/A</td>
+              <td>0.00</td>
+              <td>0.00</td>
+              <td>0.00</td>
+            </tr>
+            
+            <tr>
+              <td>8</td>
+              <td>108.170.226.183</td>
+              <td>N/A</td>
+              <td>20.11</td>
+              <td>20.17</td>
+              <td>15.97</td>
+            </tr>
+            
+            <tr>
+              <td>9</td>
+              <td>216.239.43.63</td>
+              <td>N/A</td>
+              <td>15.52</td>
+              <td>17.24</td>
+              <td>15.70</td>
+            </tr>
+            
+            <tr>
+              <td>10</td>
+              <td>142.251.40.174</td>
+              <td>lga25s81-in-f14.1e100.net</td>
+              <td>17.27</td>
+              <td>*</td>
+              <td>*</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="mt-4 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-md shadow-lg">
+        <p class="text-lg font-semibold">Total Network Latency to Destination</p>
+        <p class="text-3xl font-bold">17.27 ms</p>
+      </div>
+    </section>
+
+    
+    <footer class="mt-4 text-center text-gray-500 text-sm">
+      <p>Made with ❤️ in <a href="https://en.wikipedia.org/wiki/New_Hampshire" target="_blank" class="text-blue-500 hover:underline">New Hampshire</a>
+      by <a href="https://mohan-chinnappan-n.github.io/about/cv.html" target="_blank" class="text-blue-500 hover:underline">mc</a></p>
+      <p>© 2025 Traceroute Tool</p>
+    </footer>
+  </div>
+
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('#tracerouteTable').DataTable({
+        paging: true,
+        searching: true,
+        ordering: true,
+        pageLength: 10,
+        lengthChange: true,
+        lengthMenu: [ [10, 25, 50, 100], [10, 25, 50, 100] ], 
+        info: true,
+        autoWidth: false,
+        dom: 'lBfrtip', 
+        buttons: [
+          {
+            extend: 'csv',
+            text: 'Download CSV',
+            filename: 'traceroute_results',
+            exportOptions: {
+              modifier: {
+                search: 'none' 
+              }
+            }
+          }
+        ]
+      });
+    });
+  </script>
+</body>
+</html>
