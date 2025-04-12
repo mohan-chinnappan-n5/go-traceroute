@@ -293,6 +293,7 @@ func generateHTML(results TracerouteResults, outputFile string) error {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Traceroute Results - {{.Hostname}}</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+   <link rel="icon" type="image/x-icon" href="https://mohan-chinnappan-n5.github.io/dfv/img/mc_favIcon.ico">
   <!-- Add DataTables CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
   <!-- Add DataTables Buttons CSS for CSV export -->
