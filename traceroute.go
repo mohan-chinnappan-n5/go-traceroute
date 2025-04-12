@@ -1,5 +1,10 @@
 package main
 
+//------------------------
+// traceroute.go
+// author: mohan chinnappan
+//------------------------
+
 import (
     "flag"
     "fmt"
